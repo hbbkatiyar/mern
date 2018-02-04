@@ -1,0 +1,6 @@
+******* First Time Deployment *******
+Create Heroku Account => Commit our codebase to git => Install Heroku CLI and Create App 
+=> Deploy App with GIT => Heroku deploys project
+
+******* Subsequent deploys *******
+Commit codebase with git => Deploy App with Git
