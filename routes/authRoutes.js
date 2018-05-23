@@ -14,13 +14,17 @@ module.exports = app => {
     
     app.get(
         '/auth/google/callback', 
-        passport.authenticate('google')
+        passport.authenticate('google'),
+        (req, res) => {
+            res.redirect('/surveys');
+        } 
     );
 
     app.get('/api/logout', (req, res) => {
         //logout is function automatically attached with req object by passport. It kills the cookies
         req.logout();
-        res.send(req.user);
+        //res.send(req.user);
+        res.redirect('/');
         // as soon as req.logout() will get executed, passport will automatically destroyed user object associated with req object
     });
 
@@ -28,4 +32,5 @@ module.exports = app => {
         //res.send(req.session);
         res.send(req.user);
     });
+    
 };
