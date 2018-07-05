@@ -9,11 +9,11 @@ import formFields from  './formFields';
 import { fetchEntity } from '../../actions';
 
 class EntityForm extends Component {
-    componentDidMount() {
-        console.log(this.props);
-        
-        //let id = this.props.location || '5b2547d0af0e4b303a2d92bf';
-        //this.props.fetchEntity(id);
+    componentDidMount() {        
+        let entityId = this.props.entityId || null;
+        if (entityId) {
+            this.props.fetchEntity(entityId);
+        }        
     }
     renderOptions(options) {
         return _.map(options, (option) => {
@@ -21,8 +21,6 @@ class EntityForm extends Component {
         });
     }
     renderInputField(label, name) {
-        console.log(this.props.entity[name]);
-
         return <Field key={name} component={InputField} type="text" label={label} name={name} />
     }
     renderSelectField(label, name, options) {
@@ -44,7 +42,7 @@ class EntityForm extends Component {
         });
     }
     render() {
-        console.log(this.props.entity);
+        //console.log(this.props.entity);
 
         return (
             <div>
@@ -84,7 +82,7 @@ function mapStateToProps(state) {
 
 //export default
 EntityForm = reduxForm({
-    //validate,
+    validate,
     form: 'entityForm',
     destroyOnUnmount: false
 })(EntityForm);

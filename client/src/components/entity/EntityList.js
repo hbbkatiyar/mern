@@ -42,7 +42,7 @@ class EntityList extends Component {
                     <td>{amount ? amount : '-'}</td>
                     <td>{ENTITY.SUBTYPE[subtype]} <small>({person_envolved} Person)</small></td>
                     <td>
-                        {1 === 2 && <Link to={`/agriculture-entity/new/${_id}`} className="waves-effect waves-light btn-small">
+                        {1 === 1 && <Link to={`/agriculture-entity/new/${_id}`} className="waves-effect waves-light btn-small">
                             <i className="material-icons left">edit</i>
                         </Link>}
 
@@ -55,9 +55,6 @@ class EntityList extends Component {
         });
     }
     render() {
-        console.log("render");
-        console.log(this.props);
-
         return (
             <table className="striped">
                 {this.renderEntitesHeader()}
@@ -70,7 +67,6 @@ class EntityList extends Component {
 }
 
 function mapStateToProps(state) {
-    console.log(state);
     return { list: state.entities };
 }
 

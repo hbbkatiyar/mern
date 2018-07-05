@@ -14,7 +14,10 @@ class EntityNew extends Component {
 
     // OR
 
-    state = { showFormReview: false };
+    state = { 
+        showFormReview: false,
+        entityId: this.props.match.params.id || null
+    };
 
     renderContent() {
         if (this.state.showFormReview) {
@@ -26,7 +29,7 @@ class EntityNew extends Component {
         }
 
         return (
-            <EntityForm 
+            <EntityForm entityId={this.state.entityId}
                 onSurveySubmit={() => this.setState({ showFormReview: true })}
             />
         );
