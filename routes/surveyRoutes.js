@@ -10,6 +10,8 @@ const surveyTemplate = require('../services/emailTemplates/surveyTemplate');
 
 module.exports = app => {
     app.get('/api/surveys', requireLogin, async (req, res) => {
+        console.log(req);
+        
         const surveys  = await Survey.find({ _user: req.user.id })
             .select({ recipients: 0 }); 
             //.select({'-recipients');

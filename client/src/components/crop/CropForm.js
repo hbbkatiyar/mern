@@ -3,26 +3,25 @@ import _ from 'lodash';
 import React, { Component } from 'react';
 import { reduxForm, Field } from 'redux-form';
 import { Link } from 'react-router-dom';
-import SurveyField from './SurveyField';
-import validateEmails from '../../utils/validateEmails';
+import InputField from '../common/InputField';
 import formFields from  './formFields';
 
-class SurveyForm extends Component {
-    
-    // Helper method
+class CropForm extends Component {
+    renderInputField(label, name) {
+        return <Field key={name} component={InputField} type="text" label={label} name={name} />
+    }
     renderFields() {
-        return _.map(formFields, ({ label, name }) => {
-            return <Field key={name} component={SurveyField} type="text" label={label} name={name} />
+        return _.map(formFields, ({ label, name, type }) => {
+            return this.renderInputField(label, name);            
         });
     }
-
     render() {
         return (
             <div>
                 <form onSubmit={this.props.handleSubmit(this.props.onSurveySubmit)}>
                     {this.renderFields()}
 
-                    <Link to="/surveys" className="red btn-flat white-text">Cancel</Link>
+                    <Link to="/agriculture-crops" className="red btn-flat white-text">Cancel</Link>
                     <button type="submit" className="teal btn-flat right white-text">
                         Next
                         <i className="material-icons right">done</i>
@@ -32,23 +31,21 @@ class SurveyForm extends Component {
         );
     }
 };
-
 function validate(values) {
     const errors = {};
     
-    errors.recipients = validateEmails(values.recipients || '');
-
     _.each(formFields, ({ name, noValueError }) => {
         if (!values[name]) {
             errors[name] = noValueError;
         }
     });
 
+    console.log(errors);
     return errors;
 }
 
 export default reduxForm({
     validate,
-    form: 'surveyForm',
+    form: 'cropForm',
     destroyOnUnmount: false
-})(SurveyForm);
+})(CropForm);

@@ -1,0 +1,157 @@
+/****** Entities Collection *******/
+db.entities.insertMany( [
+{
+    title: "Tube Well 20 Beegha",
+    size: 20,
+    unit: 1,
+    type: 1,
+    subtype: 1,    
+    person_envolved: 1,
+    amount: 0,
+    status: true,
+    created_at: new Date(),
+    updated_at: new Date()
+},
+{
+    title: "Tube Well 16 Beegha",
+    size: 16,
+    unit: 1,
+    type: 1,
+    subtype: 1,    
+    person_envolved: 1,
+    amount: 0,
+    status: true,
+    created_at: new Date(),
+    updated_at: new Date()
+},
+{
+    title: "Baag 6 Beegha",
+    size: 6,
+    unit: 1,
+    type: 1,
+    subtype: 1,    
+    person_envolved: 1,
+    amount: 0,
+    status: true,
+    created_at: new Date(),
+    updated_at: new Date()
+},
+{
+    title: "Bisaha",
+    size: 10,
+    unit: 1,
+    type: 2,
+    subtype: 1,    
+    person_envolved: 1,
+    amount: 80000,
+    status: true,
+    created_at: new Date(),
+    updated_at: new Date()
+},
+{
+    title: "Pohkar 3 Beegha",
+    size: 3,
+    unit: 1,
+    type: 2,
+    subtype: 2,    
+    person_envolved: 2,
+    amount: 17000,
+    status: true,
+    created_at: new Date(),
+    updated_at: new Date()
+},
+{
+    title: "Pohkar 2 Beegha",
+    size: 2,
+    unit: 1,
+    type: 2,
+    subtype: 2,    
+    person_envolved: 2,
+    amount: 10000,
+    status: true,
+    created_at: new Date(),
+    updated_at: new Date()
+},
+{
+    title: "Sadari Major",
+    size: 10,
+    unit: 1,
+    type: 2,
+    subtype: 2,    
+    person_envolved: 2,
+    amount: 80000,
+    status: true,
+    created_at: new Date(),
+    updated_at: new Date()
+},
+{
+    title: "Gangupur 10 Beegha",
+    size: 10,
+    unit: 1,
+    type: 2,
+    subtype: 2,    
+    person_envolved: 2,
+    amount: 80000,
+    status: true,
+    created_at: new Date(),
+    updated_at: new Date()
+}]);
+
+
+
+/****** Crops Collection *******/
+db.crops.insertMany( [
+{
+    title: "Potato",
+    status: true,
+    created_at: new Date(),
+    updated_at: new Date()
+},
+{
+    title: "Summer Maize",
+    status: true,
+    created_at: new Date(),
+    updated_at: new Date()
+},
+{
+    title: "Rainy Maize",
+    status: true,
+    created_at: new Date(),
+    updated_at: new Date()
+},
+{
+    title: "Wheet",
+    status: true,
+    created_at: new Date(),
+    updated_at: new Date()
+},
+{
+    title: "Water Lemon",
+    status: true,
+    created_at: new Date(),
+    updated_at: new Date()
+},
+{
+    title: "Paddy",
+    status: true,
+    created_at: new Date(),
+    updated_at: new Date()
+},
+{
+    title: "Onion",
+    status: true,
+    created_at: new Date(),
+    updated_at: new Date()
+},
+{
+    title: "Cucumber",
+    status: true,
+    created_at: new Date(),
+    updated_at: new Date()
+},
+{
+    title: "Penutes",
+    status: true,
+    created_at: new Date(),
+    updated_at: new Date()
+}]);

@@ -3,16 +3,20 @@ const mongoose = require('mongoose');
 const cookieSession = require('cookie-session');
 const passport = require('passport');
 const bodyParser = require('body-parser');
+const fileUpload = require('express-fileupload');
+const cors = require('cors');
 const keys = require('./config/keys');
+const app = express();
+
 require('./models/User');
 require('./models/Survey');
 require('./services/passport');
+require('./models/Entity');
+require('./models/Crop');
 
 mongoose.connect(keys.mongoURI);
 
-const app = express();
-
-
+app.use(cors());
 app.use(bodyParser.json());
 app.use(
     cookieSession({
@@ -22,10 +26,14 @@ app.use(
 );
 app.use(passport.initialize());
 app.use(passport.session());
+app.use(fileUpload());
+app.use('/public', express.static(__dirname + '/public'));
 
 require('./routes/authRoutes')(app);
 require('./routes/billingRoutes')(app);
 require('./routes/surveyRoutes')(app);
+require('./routes/entityRoutes')(app);
+require('./routes/cropRoutes')(app);
 
 if (process.env.NODE_ENV === 'production') {
     // Express will serve up production assets

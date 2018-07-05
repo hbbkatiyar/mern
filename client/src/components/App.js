@@ -7,13 +7,38 @@ import * as actions from '../actions';
 // Route: React Component
 
 import Header from './Header';
-import Landing from './Landing';
+import Footer from './Footer';
 import Dashboard from './Dashboard';
-import SurveyNew from './surveys/SurveyNew';
+import Entity from './entity/Entity';
+import EntityNew from './entity/EntityNew';
+import DebitHeads from './entity/DebitHeads';
 
-// const Dashboard = () => <h2>Dashboard</h2>
-// const SurveyNew = () => <h2>SurveyNew</h2>
-//const Landing = () => <h2>Landing</h2>
+import Crop from './crop/Crop';
+import CropNew from './crop/CropNew';
+
+// const DebitHeads = () => {
+//     return (
+//         <div style={{ textAlign: 'center', minHeight: '250px', marginTop: '150px' }}>DebittHead Section</div>
+//     );
+// }
+
+const CreditHeads = () => {
+    return (
+        <div style={{ textAlign: 'center', minHeight: '250px', marginTop: '150px' }}>CreditHead Section</div>
+    );
+}
+
+const Inventories = () => {
+    return (
+        <div style={{ textAlign: 'center', minHeight: '250px', marginTop: '150px' }}>Inventories Section</div>
+    );
+}
+
+const Dairy = () => {
+    return (
+        <div style={{ textAlign: 'center', minHeight: '250px', marginTop: '150px' }}>Dairy Section</div>
+    );
+}
 
 class App extends Component {
     componentDidMount () {
@@ -25,10 +50,29 @@ class App extends Component {
             <div className="container">
                 <BrowserRouter>
                     <div>
-                        <Header />             
-                        <Route exact path="/" component={Landing} />       
-                        <Route exact path="/surveys" component={Dashboard} />
-                        <Route path="/surveys/new" component={SurveyNew} />                    
+                        <Header />
+
+                        {/* Start Dashboard Section Routes*/}             
+                        <Route exact path="/" component={Dashboard} />  
+                        {/* End Dashboard Section Routes*/}
+
+                        {/* Start Agriculure Section Routes*/}
+                        <Route exact path="/agriculture-entity" component={Entity} />
+                        <Route path="/agriculture-entity/new" component={EntityNew} />
+                        <Route path="/agriculture-entity/new/:id" component={EntityNew} />
+                        <Route exact path="/agriculture-crops" component={Crop} />
+                        <Route path="/agriculture-crops/new" component={CropNew} />
+                        <Route exact path="/agriculture-debit-heads" component={DebitHeads} />                        
+                        <Route exact path="/agriculture-inventories" component={Inventories} />
+                        <Route exact path="/agriculture-credit-heads" component={CreditHeads} />
+                        {/* End Agriculure Section Routes*/}
+
+
+                        {/* Start Dairy Section Routes*/}
+                        <Route exact path="/dairy" component={Dairy} />
+                        {/* End Dairy Section Routes*/}
+
+                        <Footer />                    
                     </div>
                 </BrowserRouter>
             </div>
