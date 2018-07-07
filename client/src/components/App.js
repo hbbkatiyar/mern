@@ -11,7 +11,6 @@ import Footer from './Footer';
 import Dashboard from './Dashboard';
 import Entity from './entity/Entity';
 import EntityNew from './entity/EntityNew';
-import SimpleForm from './entity/SimpleForm';
 import DebitHeads from './entity/DebitHeads';
 
 import Crop from './crop/Crop';
