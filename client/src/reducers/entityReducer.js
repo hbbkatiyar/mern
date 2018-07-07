@@ -12,14 +12,14 @@ export default function(state = initialState, action) {
             //_state[action.use] = !state[action.use];
             return action.payload;
 
-        case DELETE_ENTITY:
-            _state = Object.assign([], state);
-            //_state[action.use] = !state[action.use];
-            return action.payload;
-
         case FETCH_ENTITY:
             _state = Object.assign({}, state);
            // _state[action.use] = !state[action.use];
+            return action.payload;
+
+        case DELETE_ENTITY:
+            _state = Object.assign([], state);
+            //_state[action.use] = !state[action.use];
             return action.payload;
 
         default:

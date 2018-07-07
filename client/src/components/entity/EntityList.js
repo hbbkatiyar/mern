@@ -42,7 +42,7 @@ class EntityList extends Component {
                     <td>{amount ? amount : '-'}</td>
                     <td>{ENTITY.SUBTYPE[subtype]} <small>({person_envolved} Person)</small></td>
                     <td>
-                        {1 === 1 && <Link to={`/agriculture-entity/new/${_id}`} className="waves-effect waves-light btn-small">
+                        {this.props.auth && <Link to={`/agriculture-entity/new/${_id}`} className="waves-effect waves-light btn-small">
                             <i className="material-icons left">edit</i>
                         </Link>}
 

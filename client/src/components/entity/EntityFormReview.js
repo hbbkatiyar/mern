@@ -7,7 +7,7 @@ import { withRouter } from  'react-router-dom';
 import * as actions from '../../actions';
 import { ENTITY } from '../../utils/hashMap';
 
-const EntityFormReview = ({ onCancel, formValues, submitEntity, history,  entityId}) => {
+const EntityFormReview = ({ onCancel, formValues, submitEntity, history, entityId}) => {
     console.log("ent = " + entityId);
 
     const reviewFields = _.map(formFields, ({ name, label, type }) => {

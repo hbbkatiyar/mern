@@ -7,19 +7,23 @@ import CropFormReview from './CropFormReview';
 
 
 class CropNew extends Component {
-    state = { showFormReview: false };
+    
+    state = { 
+        showFormReview: false,
+        cropId: this.props.match.params.id || null 
+    };
 
     renderContent() {
         if (this.state.showFormReview) {
             return (
-                <CropFormReview 
+                <CropFormReview cropId={this.state.cropId}
                     onCancel={() => this.setState({ showFormReview: false })} 
                 />
             );
         }
 
         return (
-            <CropForm 
+            <CropForm cropId={this.state.cropId}
                 onSurveySubmit={() => this.setState({ showFormReview: true })}
             />
         );

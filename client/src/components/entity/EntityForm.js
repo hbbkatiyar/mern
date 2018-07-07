@@ -86,8 +86,7 @@ function mapStateToProps(state) {
     console.log(state.entities);
 
     return {
-        initialValues: Object.keys(state.entities).indexOf("title") >= 0 
-            ? state.entities : null
+        initialValues: Object.keys(state.entities).indexOf("title") >= 0 ? state.entities : null
     };
 }
 

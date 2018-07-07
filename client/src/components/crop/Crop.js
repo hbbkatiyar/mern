@@ -12,7 +12,8 @@ class Crop extends Component {
     render () {
         return (
             <div>
-                <CropList auth={this.props.auth} />            
+                <CropList auth={this.props.auth} />
+                            
                 {this.props.auth && <div className="fixed-action-btn">
                     <Link to="/agriculture-crops/new" className="btn-floating btn-large red">
                         <i className="material-icons">add</i>

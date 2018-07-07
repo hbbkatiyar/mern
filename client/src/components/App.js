@@ -60,10 +60,15 @@ class App extends Component {
                         <Route exact path="/agriculture-entity" component={Entity} />
                         <Route exact path="/agriculture-entity/new" component={EntityNew} />
                         <Route exact path="/agriculture-entity/new/:id" component={EntityNew} />
+
                         <Route exact path="/agriculture-crops" component={Crop} />
                         <Route exact path="/agriculture-crops/new" component={CropNew} />
-                        <Route exact path="/agriculture-debit-heads" component={DebitHeads} />                        
+                        <Route exact path="/agriculture-crops/new/:id" component={CropNew} />
+                        
+                        <Route exact path="/agriculture-debit-heads" component={DebitHeads} />  
+
                         <Route exact path="/agriculture-inventories" component={Inventories} />
+
                         <Route exact path="/agriculture-credit-heads" component={CreditHeads} />
                         {/* End Agriculure Section Routes*/}
 

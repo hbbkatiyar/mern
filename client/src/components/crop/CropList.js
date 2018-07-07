@@ -32,7 +32,7 @@ class CropList extends Component {
                     <td>{title}</td>
 					<td>{new Date(created_at).toLocaleDateString()}</td>
                     <td>
-                        { 1 === 2 && <Link to="/agriculture-crops/new" className="waves-effect waves-light btn-small">
+                        {this.props.auth && <Link to={`/agriculture-crops/new/${_id}`} className="waves-effect waves-light btn-small">
                             <i className="material-icons left">edit</i>
                         </Link>}
 

@@ -6,7 +6,7 @@ import formFields from  './formFields';
 import { withRouter } from  'react-router-dom';
 import * as actions from '../../actions';
 
-const CropFormReview = ({ onCancel, formValues, submitCrop, history }) => {
+const CropFormReview = ({ onCancel, formValues, submitCrop, history, cropId }) => {
     const reviewFields = _.map(formFields, ({ name, label }) => {
         return (
             <div key={name}>
@@ -24,7 +24,7 @@ const CropFormReview = ({ onCancel, formValues, submitCrop, history }) => {
                 Back
             </button> 
             <button className="green btn-flat right white-text"
-                onClick={() => submitCrop(formValues, history)}>
+                onClick={() => submitCrop(formValues, history, cropId)}>
                 Save
                 <i className="material-icons right">email</i>
             </button>
