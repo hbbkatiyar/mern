@@ -11,6 +11,7 @@ import Footer from './Footer';
 import Dashboard from './Dashboard';
 import Entity from './entity/Entity';
 import EntityNew from './entity/EntityNew';
+import SimpleForm from './entity/SimpleForm';
 import DebitHeads from './entity/DebitHeads';
 
 import Crop from './crop/Crop';
@@ -58,10 +59,10 @@ class App extends Component {
 
                         {/* Start Agriculure Section Routes*/}
                         <Route exact path="/agriculture-entity" component={Entity} />
-                        <Route path="/agriculture-entity/new" component={EntityNew} />
-                        <Route path="/agriculture-entity/new/:id" component={EntityNew} />
+                        <Route exact path="/agriculture-entity/new" component={EntityNew} />
+                        <Route exact path="/agriculture-entity/new/:id" component={EntityNew} />
                         <Route exact path="/agriculture-crops" component={Crop} />
-                        <Route path="/agriculture-crops/new" component={CropNew} />
+                        <Route exact path="/agriculture-crops/new" component={CropNew} />
                         <Route exact path="/agriculture-debit-heads" component={DebitHeads} />                        
                         <Route exact path="/agriculture-inventories" component={Inventories} />
                         <Route exact path="/agriculture-credit-heads" component={CreditHeads} />

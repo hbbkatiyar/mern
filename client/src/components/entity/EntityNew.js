@@ -20,9 +20,11 @@ class EntityNew extends Component {
     };
 
     renderContent() {
+        console.log("showFormReview = " + this.state.showFormReview);
+        
         if (this.state.showFormReview) {
             return (
-                <EntityFormReview 
+                <EntityFormReview entityId={this.state.entityId}
                     onCancel={() => this.setState({ showFormReview: false })} 
                 />
             );

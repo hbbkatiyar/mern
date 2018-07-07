@@ -7,8 +7,9 @@ import { withRouter } from  'react-router-dom';
 import * as actions from '../../actions';
 import { ENTITY } from '../../utils/hashMap';
 
-const EntityFormReview = ({ onCancel, formValues, submitEntity, history }) => {
-    
+const EntityFormReview = ({ onCancel, formValues, submitEntity, history,  entityId}) => {
+    console.log("ent = " + entityId);
+
     const reviewFields = _.map(formFields, ({ name, label, type }) => {
         return (
             <div key={name}>
@@ -29,7 +30,7 @@ const EntityFormReview = ({ onCancel, formValues, submitEntity, history }) => {
                 Back
             </button> 
             <button className="green btn-flat right white-text"
-                onClick={() => submitEntity(formValues, history)}>
+                onClick={() => submitEntity(formValues, history, entityId)}>
                 Save
                 <i className="material-icons right">email</i>
             </button>
