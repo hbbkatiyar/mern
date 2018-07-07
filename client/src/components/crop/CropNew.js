@@ -5,9 +5,7 @@ import { reduxForm } from 'redux-form';
 import CropForm from './CropForm';
 import CropFormReview from './CropFormReview';
 
-
 class CropNew extends Component {
-    
     state = { 
         showFormReview: false,
         cropId: this.props.match.params.id || null 

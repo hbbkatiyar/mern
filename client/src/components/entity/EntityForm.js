@@ -47,9 +47,6 @@ class EntityForm extends Component {
     }
 
     render() {
-        console.log("render entity form component");
-        console.log(this.props.initialValues);
-        
         if(this.props.entityId && !this.props.initialValues) {
             return <div>Loading...</div>
         } else {
@@ -83,8 +80,6 @@ function validate(values) {
 }
 
 function mapStateToProps(state) {
-    console.log(state.entities);
-
     return {
         initialValues: Object.keys(state.entities).indexOf("title") >= 0 ? state.entities : null
     };

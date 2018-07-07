@@ -6,12 +6,24 @@ class Header extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            tabname: 'home',
+            tabname: this.getCurrentTabName(),
             agriculture: 'entity',
             dairy: 'home'
         };
-        //this.headerList =         
     }
+
+    getCurrentTabName() {
+        let tabname = 'home';
+
+        if (window.location.pathname.indexOf('agriculture') >= 0) {
+            tabname = 'agriculture';
+        } else if(window.location.pathname.indexOf('dairy') >= 0) {
+            tabname = 'dairy';
+        }
+
+        return tabname;
+    }
+
     changeTab(tabname) {
         console.log("tabname = " + tabname);
 
@@ -19,12 +31,14 @@ class Header extends Component {
             tabname: tabname
         }, console.log(this.state.tabname));
     }
+
     renderLogo() {
         return (<Link to="/" className="left brand-logo">
             <img src="../../images/logo.png" alt="Logo"
                 style={{ 'width': '70px',  'padding': "0px 10px" }} />
         </Link>);
     }
+
     renderAgricultureHeader() {
         console.log("renderAgricultureHeader");
 
@@ -46,37 +60,28 @@ class Header extends Component {
                             <Link to="/agriculture-inventories">Inventories</Link></li> }
 
                     { this.props.auth 
-                        && <li className="tab disabled">
+                        && <li className="tab">
                             <Link to="/agriculture-credit-heads">Credit Heads</Link></li> }
                 </ul>
             </div>
         );
     }
+
     renderDairyHeader() {
         return (
             <div className="nav-content">
                 <ul className="tabs tabs-transparent">
-                    <li className="tab">
-                        <a href="javascript:void(0);" className="active">Home</a></li>
-
-                    <li className="tab">
-                        <a href="javascript:void(0);">About Us</a></li> 
-
-                    <li className="tab">
-                        <a href="javascript:void(0);">Our Approach</a></li>                           
-
-                    <li className="tab">
-                        <a href="javascript:void(0);">Services</a></li>
-
-                    <li className="tab">
-                        <a href="javascript:void(0);">Gallery</a></li>
-
-                    <li className="tab">
-                        <a href="javascript:void(0);">Contact Us</a></li>
+                    <li className="tab"><a href="#" className="active">Home</a></li>
+                    <li className="tab"><a href="#">About Us</a></li> 
+                    <li className="tab"><a href="#">Our Approach</a></li>                           
+                    <li className="tab"><a href="#">Services</a></li>
+                    <li className="tab"><a href="#">Gallery</a></li>
+                    <li className="tab"><a href="#">Contact Us</a></li>
                 </ul>
             </div>
         );
     }    
+
     renderContent() {
         switch(this.props.auth) {
             case null:
@@ -111,7 +116,10 @@ class Header extends Component {
                 ];
         }
     }
+
     render() {
+        console.log("header render");
+
         return (
             <nav className="nav-extended">
                 <div className="nav-wrapper">

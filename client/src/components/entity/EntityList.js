@@ -11,9 +11,11 @@ class EntityList extends Component {
     componentDidMount() {
         this.props.fetchEntities();
     }
+
     deleteItem(id) {
         this.props.deleteEntity(id, history);
     }
+
     renderEntitesHeader() {
         return (
             <thead>
@@ -28,6 +30,7 @@ class EntityList extends Component {
             </thead>
         );
     }
+
     renderEntities() {
         if(!this.props.list.length) {
             return (<tr><td colSpan="7" style={{ textAlign: 'center' }}>No Data found</td></tr>);
@@ -54,6 +57,7 @@ class EntityList extends Component {
             );
         });
     }
+    
     render() {
         return (
             <table className="striped">

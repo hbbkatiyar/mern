@@ -56,18 +56,14 @@ function validate(values) {
         }
     });
 
-    console.log(errors);
     return errors;
 }
 
 function mapStateToProps(state) {
-    console.log(state.crops);
-
     return {
         initialValues: Object.keys(state.crops).indexOf("title") >= 0 ? state.crops : null
     };
 }
-
 
 CropForm = reduxForm({
     validate,

@@ -7,9 +7,11 @@ class CropList extends Component {
     componentDidMount() {
         this.props.fetchCrops();
     }
+
     deleteItem(id) {
         this.props.deleteCrop(id);
     }
+
     renderTableHeader() {
         return (
             <thead>
@@ -21,6 +23,7 @@ class CropList extends Component {
             </thead>
         );
     }
+
     renderContent() {
         if(!this.props.list.length) {
             return (<tr><td colSpan="3" style={{ textAlign: 'center' }}>No Data found</td></tr>);
@@ -44,6 +47,7 @@ class CropList extends Component {
             );
         });
     }
+    
     render() {
         return (
             <table className="striped">

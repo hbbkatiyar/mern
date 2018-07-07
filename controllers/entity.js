@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const Entity =  mongoose.model('entities');
+csv = require('express-csv');
 
 exports.getEntities = async function(req, res) {
     const entities  = await Entity.find({ status: true });
@@ -101,7 +102,7 @@ exports.sampleUpload = async function(req, res) {
     });
 }
 
-exports.sampleDownload = async function(req, res) {
+exports.sampleDownload = function(req, res) {
     res.csv([
         ["Name", "Employee Code", "Email"],
         ["Binit", "EMP001", "binit.katiyar@gmail.com"],

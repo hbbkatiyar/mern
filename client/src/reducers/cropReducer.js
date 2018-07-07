@@ -1,23 +1,19 @@
 import { FETCH_CROPS, FETCH_CROP, DELETE_CROP } from '../actions/types';
 
-const initialState = {
-    previous: true,
-    later: true
-};
-let _state;
+const initialState = [];
 
-export default function(state = [], action) {
+export default function(state = initialState, action) {
     switch (action.type) {
         case FETCH_CROPS:
-            _state = Object.assign([], state);
+            Object.assign([], state);
             return action.payload;
 
         case FETCH_CROP:
-            _state = Object.assign({}, state);
+            Object.assign({}, state);
             return action.payload;
 
         case DELETE_CROP:
-            _state = Object.assign([], state);
+            Object.assign([], state);
             return action.payload;
 
         default:
